@@ -7,9 +7,10 @@ JavaScript es un lenguaje de programación moderno, quizá el más utilizado a n
 ---
 
 ## Secciones:
-- [Seccion 01: Introducción](Secciones/01)
 
-- [Seccion 02: Variables, Objetos, Typeof y Condicionales](Secciones/02)
+- [Seccion 01: Introducción](MD/Introduccion.md)
+
+- [Seccion 02: Variables, Objetos, Typeof y Condicionales](MD/Variables-Objetos-Typeof-Condicionales.md)
 
 <div align="center">
 <img src="img/207001107 Dance.gif">
