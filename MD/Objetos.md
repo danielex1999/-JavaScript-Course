@@ -1,5 +1,10 @@
 # Profundizando en los objetos
 
+- [Arreglos](#arreglos)
+- [Argumentos](#argumentos)
+- [Sobrecarga de operadores](#sobrecarga-de-operadores)
+
+
 ## Arreglos
 
 Los arreglos son una colección de elementos. Los elementos de un arreglo pueden ser de cualquier tipo, como números, cadenas, arreglos, objetos, funciones, etc. Los arreglos se declaran con corchetes `[]` y los elementos se separan con comas `,`.
@@ -80,4 +85,74 @@ var dobles = numeros.map(function(numero) {
 });
 console.log(dobles); // [2, 4, 6, 8, 10]
 ```
+
+## Argumentos
+
+Los argumentos son los valores que se pasan a una función. Los argumentos se pasan entre paréntesis `()` y se separan con comas `,`.
+
+```javascript
+
+function suma(a, b) {
+  return a + b;
+}
+
+console.log(suma(1, 2)); // 3
+```
+
+Los argumentos son variables locales a la función. No se pueden acceder desde fuera de la función.
+
+```javascript
+function suma(a, b) {
+  return a + b;
+}
+
+console.log(a); // ReferenceError: a is not defined
+```
+
+Los argumentos se pueden pasar por valor o por referencia. Los tipos primitivos se pasan por valor, mientras que los objetos se pasan por referencia.
+
+```javascript
+function suma(a, b) {
+  a = a + b;
+}
+
+var x = 1;
+var y = 2;
+suma(x, y);
+console.log(x); // 1
+console.log(y); // 2
+```
+
+```javascript
+function suma(a, b) {
+  a.x = a.x + b.x;
+}
+
+var x = {x: 1};
+var y = {x: 2};
+suma(x, y);
+console.log(x); // {x: 3}
+console.log(y); // {x: 2}
+```
+
+## Sobrecarga de operadores
+
+Los operadores se pueden sobrecargar, es decir, se pueden redefinir para que hagan otras cosas. Por ejemplo, el operador `+` se puede sobrecargar para que sume dos números o concatene dos cadenas.
+
+```javascript
+Number.prototype.suma = function(n) {
+  return this + n;
+};
+
+String.prototype.suma = function(s) {
+  return this + s;
+};
+
+console.log(1.suma(2)); // 3
+console.log("Hola ".suma("Mundo")); // "Hola Mundo"
+```
+
+
+
+
 
